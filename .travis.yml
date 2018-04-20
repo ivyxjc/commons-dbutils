@@ -22,4 +22,9 @@ jdk:
   - oraclejdk9
 
 after_success:
+  - mvn sonar:sonar -Dsonar.organization=ivyxjc-github  -Dsonar.login=$ivyxjcSonar -Dsonar.host.url=https://sonarcloud.io
   - mvn clean cobertura:cobertura coveralls:report
+
+#cache:
+#    - '$HOME/.m2/repository'
+#    - '$HOME/.sonar/cache'
